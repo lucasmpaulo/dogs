@@ -1,5 +1,5 @@
 import React from 'react'
-import { TOKEN_POST, USER_GET, TOKEN_VALIDATE_POST } from './api';
+import { TOKEN_POST, USER_GET, TOKEN_VALIDATE_POST } from './Api';
 import { useNavigate } from 'react-router-dom';
 
 export const UserContext = React.createContext();
@@ -26,7 +26,6 @@ export const UserStorage = ({children}) => {
     const json = await response.json();
     setData(json);
     setLogin(true);
-    console.log(json)
   }
 
   async function userLogin(username, password) {
@@ -64,6 +63,8 @@ export const UserStorage = ({children}) => {
         } finally {
           setLoading(false);
         }
+      } else {
+        setLogin(false);
       }
     }
   
@@ -71,7 +72,7 @@ export const UserStorage = ({children}) => {
   }, [userLogout]);
   
   return (
-    <UserContext.Provider value={{ userLogin, userLogout ,data, error, loading, login }}>
+    <UserContext.Provider value={{ userLogin, userLogout, data, error, loading, login }}>
       {children}
     </UserContext.Provider>
   )
