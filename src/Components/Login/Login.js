@@ -22,7 +22,7 @@ const Login = () => {
         </Routes>
       </div>
     </section>
-  )
-}
+  );
+};
 
 export default Login

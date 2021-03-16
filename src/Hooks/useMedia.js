@@ -9,6 +9,8 @@ const useMedia = (media) => {
       const { matches } = window.matchMedia(media);
       setMatch(matches);
     }
+    // Executa a função ao carregar o site no inicio
+    changeMatch();
     window.addEventListener('resize', changeMatch);
     return () => {
       window.removeEventListener('resize', changeMatch);
