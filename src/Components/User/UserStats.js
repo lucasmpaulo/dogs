@@ -1,7 +1,7 @@
 import React, { lazy } from 'react'
 import useFetch from '../../Hooks/useFetch'
 import Head from '../Helper/Head'
-import { GET_STATS } from '../../Api';
+import { GET_STATS } from '../../api';
 import Loading from '../Helper/Loading';
 import Error from '../Helper/Error';
 const UserStatsGraphs = React.lazy(() => import('./UserStatsGraphs'));
