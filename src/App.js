@@ -15,14 +15,12 @@ import NotFound from './Components/Feed/NotFound';
 function App() {
   return (
     <div className="App">
-      <BrowserRouter basename={process.env.PUBLIC_URL}>
+      <BrowserRouter basename="/dogs">
         <UserStorage>
           <Header />
           <main className="AppBody">
             <Routes>
               <Route path="/" element={<Home />} />
-              <Route path="/dogs" element={<Home />} />
-              <Route path="/dogs/" element={<Home />} />
               <Route path="login/*" element={<Login />} />
               <ProtectedRoute path="conta/*" element={<User />} />
               <Route path="foto/:id" element={<Photo />} />
